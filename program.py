@@ -1,4 +1,5 @@
 from termcolor import colored
+from prettytable import PrettyTable
 
 class Map:
     def __init__(self, matrix):
@@ -76,15 +77,25 @@ class Map:
 
             print()
 
+    def print_table(self):
+        x = PrettyTable()
+
+        for row in self.matrix:
+            x.add_row(row)
+
+        print(x)
+
+
+
 
 map_array = [
-    ['_', '_', '_', 'X', 'X', '_', 'X', '_'],
+    ['S', '_', '_', 'X', 'X', '_', 'X', '_'],
     ['_', 'X', '_', '_', 'X', '_', '_', '_'],
-    ['S', 'X', 'X', '_', '_', '_', 'X', '_'],
-    ['_', 'X', '_', '_', 'X', '_', '_', '_'],
+    ['_', 'X', 'X', '_', '_', '_', 'X', '_'],
+    ['X', 'X', '_', '_', 'X', '_', '_', '_'],
     ['_', 'X', '_', 'X', 'X', '_', 'X', '_'],
     ['_', 'X', '_', '_', 'X', '_', 'X', '_'],
-    ['_', 'X', 'X', '_', '_', '_', 'X', '_'],
+    ['X', 'X', 'X', '_', '_', '_', 'X', '_'],
     ['X', '_', '_', 'F', 'X', '_', '_', '_']
 ]
 
@@ -93,13 +104,14 @@ map = Map(map_array)
 main_queue = []
 main_queue.append((map.get_finish(), 0))
 
-
 for point in main_queue:
-    if map.get_coords(point[0]) == 'S':
-        break
+
+
+    # if count > 1000:
+    #     break
 
     temp_list = []
-
+    print(point[0])
     for temp_point in map.get_adjacent_cells(point[0]):
         temp_list.append((temp_point, point[1] + 1))
 
@@ -107,7 +119,7 @@ for point in main_queue:
         try:
             value = map.get_coords(temp[0])
 
-            if value == 1 or map.outofbounds(temp[0]):
+            if value == 'X' or map.outofbounds(temp[0]):
                 temp_list.remove(temp)
 
             for item in main_queue.copy():
@@ -120,6 +132,9 @@ for point in main_queue:
     for item in temp_list:
         main_queue.append(item)
 
+    if map.get_coords(point[0]) == 'S':
+        break
+
 
 for calculated_point in main_queue:
     if map.get_coords(calculated_point[0]) != 'X' and map.get_coords(calculated_point[0]) != 'F' \
@@ -129,7 +144,9 @@ for calculated_point in main_queue:
 
 print()
 print()
-map.print()
+map.print_table()
+
+print(map.get_adjacent_cells((3, 4)))
 
 
 
