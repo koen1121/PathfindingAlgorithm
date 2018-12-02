@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="48835438-356d-4ab7-8e14-93ce10d28311" name="Default Changelist" comment="" />
+    <list default="true" id="48835438-356d-4ab7-8e14-93ce10d28311" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/program.py" beforeDir="false" afterPath="$PROJECT_DIR$/program.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/program.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="124" column="87" lean-forward="true" selection-start-line="124" selection-start-column="87" selection-end-line="124" selection-end-column="87" />
+            <state relative-caret-position="-1010">
+              <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -28,6 +30,9 @@
     <findStrings>
       <find>print</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -42,6 +47,7 @@
     <option name="width" value="859" />
     <option name="height" value="952" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -119,12 +125,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1543745386824</updated>
-      <workItem from="1543745388935" duration="14770000" />
+      <workItem from="1543745388935" duration="15210000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14770000" />
+    <option name="totallyTimeSpent" value="15210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="821" y="23" width="859" height="952" extended-state="0" />
@@ -159,8 +165,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/program.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="124" column="87" lean-forward="true" selection-start-line="124" selection-start-column="87" selection-end-line="124" selection-end-column="87" />
+        <state relative-caret-position="-1010">
+          <caret line="22" column="29" lean-forward="true" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
         </state>
       </provider>
     </entry>

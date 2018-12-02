@@ -1,5 +1,3 @@
-import queue
-
 class Map:
     def __init__(self, matrix):
         self.matrix = matrix
@@ -120,22 +118,12 @@ for point in main_queue:
 
 for calculated_point in main_queue:
     if map.get_coords(calculated_point[0]) != 2 and map.get_coords(calculated_point[0]) != 3:
-        # map.matrix[calculated_point[0][1] - 1][calculated_point[0][0] - 1] \
-        #     = calculated_point[1]
         map.update_matrix(calculated_point[0], calculated_point[1])
 
-print()
-print()
 map.print()
-
-print()
-print()
 
 for row in map.matrix:
     print(row)
-
-
-# map.print()
 
 
 
