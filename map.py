@@ -1,14 +1,24 @@
 from termcolor import colored
-from prettytable import PrettyTable
 from graphics import *
+import signal
 
 
 class Map:
-    def __init__(self, matrix, tile_width, tile_height):
-        self.matrix = matrix
+    def __init__(self, file_name, tile_width, tile_height):
         self.tile_width = tile_width
         self.tile_height = tile_height
-        self.win = GraphWin("My Screen", 900, 600)
+        self.win = GraphWin("My Screen", 900, 900)
+        self.matrix = []
+        self.convert_to_map(file_name)
+
+    def convert_to_map(self, file_name):
+        file = open(file_name, "r")
+        for row in file.readlines():
+            chars = []
+            for char in row:
+                if char == 'X' or char == '_' or char == 'F' or char == 'S':
+                    chars.append(char)
+            self.matrix.append(chars)
 
     def get_start(self):
         x, y = 1, 1
@@ -54,7 +64,6 @@ class Map:
         self.matrix[coords[1] - 1][coords[0] - 1] = value
 
     def get_adjacent_cells(self, coords):
-
         point_list = []
         # left point
         point_list.append((coords[0] - 1, coords[1]))
@@ -89,8 +98,6 @@ class Map:
                 r = Rectangle(Point(x, y), Point(x + width, y + height))
                 if item == 'X':
                     r.setFill("black")
-                elif item == '_':
-                    r.setFill('yellow')
                 elif item == 'S':
                     text_x = x + (width / 2)
                     text_y = y + (height / 2)
@@ -101,17 +108,10 @@ class Map:
                     text_y = y + (height / 2)
                     t = Text(Point(text_x, text_y), 'Finish')
                     t.draw(self.win)
-                else:
-                    text_x = x + (width / 2)
-                    text_y = y + (height / 2)
-                    t = Text(Point(text_x, text_y), item)
-                    t.draw(self.win)
-
                 r.draw(self.win)
                 x = x + width
             x = 0
             y = y + height
-
         self.draw_path(self.get_start())
         self.win.getMouse()
         self.win.close()

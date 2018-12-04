@@ -1,18 +1,6 @@
 from map import Map
 
-
-map_array = [
-    ['_', '_', '_', 'X', 'X', '_', 'X', '_'],
-    ['_', 'X', '_', '_', 'X', '_', '_', '_'],
-    ['S', 'X', 'X', '_', '_', '_', 'X', '_'],
-    ['X', 'X', '_', 'X', 'X', '_', '_', '_'],
-    ['_', 'X', '_', 'X', 'X', '_', 'X', '_'],
-    ['_', 'X', '_', '_', 'X', '_', 'X', '_'],
-    ['X', 'X', 'X', '_', '_', '_', 'X', '_'],
-    ['X', '_', '_', 'F', 'X', '_', '_', '_']
-]
-
-map = Map(map_array, 30, 30)
+map = Map("map.txt", 30, 30)
 
 main_queue = []
 main_queue.append((map.get_finish(), 0))
@@ -52,6 +40,7 @@ for calculated_point in main_queue:
 
 print()
 map.draw_map()
+# map.print()
 
 
 
